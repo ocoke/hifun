@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- 引入页面头部文件 -->
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/1GsaSI.png">
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/1GsaSI.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>使用 CloudFlare 加速你的网站 - YFun&#39;s Blog</title>
+    
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+<link rel="stylesheet" href="/icon/css/all.min.css">
+
+    
+        <link rel="stylesheet" href="/css/themes/dark.css" media="(prefers-color-scheme: dark)">
+    
+    
+    <meta name="description" content="探寻一切有趣的事物！">
+    <meta name="author" content="YFun">
+    <meta name="keywords" content="">
+    <style>.hljs-comment,.hljs-quote{color:#969896;}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-deletion{color:#cc6666;}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-meta,.hljs-link{color:#de935f;}.hljs-attribute{color:#f0c674;}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#b5bd68;}.hljs-title,.hljs-section{color:#81a2be;}.hljs-keyword,.hljs-selector-tag{color:#b294bb;}.hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:0.5em;}.hljs-emphasis{font-style:italic;}.hljs-strong{font-weight:bold;}
+</style>
+
+
+    
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="YFun's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="YFun's Blog" type="application/rss+xml">
+</head>
+
+    <body>
+        <header>
+            <div class="c-nav">
+	<div class="container navFlex">
+		<div class="flexItem">
+      		<a href="/">
+        		<h1 class="logo">YFun&#39;s Blog</h1>
+      		</a>
+		</div>
+		
+		<div class="flexItem hiden logo">
+			<i class="fa fa-bars btnImg"></i>
+		</div>
+		<div class="flexItem show">
+			<ul>
+				
+          			<li><a href="/">首页</a></li>
+				
+          			<li><a href="/archives">归档</a></li>
+				
+          			<li><a href="/categories">分类</a></li>
+				
+          			<li><a href="/tags">标签</a></li>
+				
+          			<li><a href="/talk">说说</a></li>
+				
+          			<li><a href="/links">友链</a></li>
+				
+          			<li><a href="/about/">关于</a></li>
+				
+				
+				<li><a href="javascript:;" id="search-btn"><i class="fas fa-search meta-icon"></i></a></li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+
+            <div class="modal fade display-none" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" id="searchDocument">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="fas fa-times meta-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate" placeholder="关键词">
+        </div>
+        <div class="list-group-m">
+          <div class="list-group" id="local-search-result">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        </header>
+        <div id="page-main" class="main-content">
+        <div class="mg-top">
+            
+
+<div id="post-meta-m">
+    <div class="post-meta" id="post-meta">
+  <h3>使用 CloudFlare 加速你的网站</h3>
+    
+      <span class="post-meta-label">
+        <i class="fa fa-user meta-icon" aria-hidden="true"></i>
+        YFun
+      </span>
+    
+    
+      <span class="post-meta-label ml-10">
+        <i class="fa fa-calendar meta-icon" aria-hidden="true"></i>
+        <time datetime="2020-12-15 16:19" pubdate>
+          2020年12月15日
+        </time>
+      </span>
+    
+    
+      
+      <span class="post-meta ml-10">
+        <i class="fa fa-file-word meta-icon"></i>
+        共 882 字
+      </span>
+    
+    
+      
+      <span class="post-meta ml-10">
+        <i class="fa fa-clock meta-icon"></i>
+        
+        预计 
+        9
+         分钟
+      </span>
+    
+    
+  </div>
+  
+  
+</div>
+<div class="article-m">
+  <div class="post-toc"></div>
+    <div id="article">
+      <div id="post-content">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>CloudFlare 为我们提供了免费的 CDN 服务，并拥有全球各地的优秀节点，作为<strong>国外比较优秀</strong>的 CDN 服务商。</p>
+<p>但是，来自国内的访问都会被 CloudFlare 绕到大洋彼岸的美国。再加上某神秘的阻碍，导致在国内的访问一直不是很好。Ping 出延迟基本大于 &gt;= 200ms 。</p>
+<p>在一次偶然的机会中，发现：</p>
+<ul>
+<li>CloudFlare 拥有很多节点。</li>
+<li>CloudFlare 的节点之间速度非常之快。</li>
+<li>CloudFlare 的节点之间几乎没有延迟。</li>
+<li>CloudFlare 所有节点均免费，基本可以随便接入。</li>
+</ul>
+<hr>
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><p>既然发现了这个好办法，那么就开始实践吧！</p>
+<p>首先，前往「CloudFlare Partner」的站点登录。</p>
+<blockquote>
+<p>这里要注意！CloudFlare 官方已经停止 CNAME 接入，只能前往「CloudFlare Partner」接入。</p>
+</blockquote>
+<p>以 <a target="_blank" rel="noopener" href="https://cdn.moeelf.com/">萌精灵 CDN</a> 为例，打开其官网：<a target="_blank" rel="noopener" href="https://cdn.moeelf.com/">https://cdn.moeelf.com/</a> 并登录你的 CloudFlare 账号。</p>
+<p>然后点击页面右上角的「添加域名」并加你的域名接入 CloudFlare 。</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/hPX5DZ.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/hPX5DZ.png"  alt="添加域名" >
+                    </a>
+                    </p>
+<p>输入域名并点击「添加」即可添加成功。</p>
+<p>接下来点击主页列表里的「管理 DNS」进入管理界面。</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/mLAxAy.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/mLAxAy.png"  alt="管理 DNS" >
+                    </a>
+                    </p>
+<p>接下来点击「添加新记录」添加一个新的记录。</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/UqyfQI.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/UqyfQI.png"  alt="添加记录" >
+                    </a>
+                    </p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/F0QTaI.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/F0QTaI.png"  alt="参考" >
+                    </a>
+                    </p>
+<p>然后进入你域名的 DNS 管理系统，注意是解析域名的地方。</p>
+<p>找到「CNAME 接入」处的对应 CNAME 地址，将其设为相应的解析地址。</p>
+<hr>
+<h2 id="加速访问"><a href="#加速访问" class="headerlink" title="加速访问"></a>加速访问</h2><p>虽然默认提供给我们的节点很慢，但我们可以从 CloudFlare 公开的节点中寻找访问速度快的节点。</p>
+<p>我找到了几个国内速度不错的节点，可以参考参考：</p>
+<table>
+<thead>
+<tr>
+<th>IP 地址</th>
+<th>运营商</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>104.27.169.248</td>
+<td>默认</td>
+</tr>
+<tr>
+<td>104.19.19.119</td>
+<td>移动</td>
+</tr>
+<tr>
+<td>141.101.115.11</td>
+<td>移动</td>
+</tr>
+<tr>
+<td>104.16.245.1</td>
+<td>联通</td>
+</tr>
+<tr>
+<td>104.16.246.1</td>
+<td>联通</td>
+</tr>
+<tr>
+<td>104.20.157.19</td>
+<td>电信</td>
+</tr>
+<tr>
+<td>141.101.114.202</td>
+<td>电信</td>
+</tr>
+</tbody></table>
+<p>然后再将原来的 CNAME 记录改为 A 记录到以上 IP，再配合智能运营商解析，达到提速。</p>
+<p>如果你不想一个一个设置，可以直接将「默认」记录指向 <code>cf.record.yfun.top</code> ，节点基本都是上面的，但偶尔会改变。</p>
+<p>可能会遇到的情况：<a href="#%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E7%AD%BE%E5%8F%91-SSL-%E8%AF%81%E4%B9%A6%EF%BC%9F">无法正常签发 SSL 证书</a></p>
+<hr>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="无法正常签发-SSL-证书？"><a href="#无法正常签发-SSL-证书？" class="headerlink" title="无法正常签发 SSL 证书？"></a>无法正常签发 SSL 证书？</h3><p>CloudFlare 默认会提供免费 SSL 证书服务，但使用「加速节点」可能导致无法正确签发。</p>
+<p>解决方法：使用智能 DNS，将「境外」的记录解析至控制面板提供给您的官方地址。</p>
+<hr>
+<h3 id="开启-SSL-后访问错误？"><a href="#开启-SSL-后访问错误？" class="headerlink" title="开启 SSL 后访问错误？"></a>开启 SSL 后访问错误？</h3><p>试着为源站配置 SSL 证书，然后前往官方控制台（<a target="_blank" rel="noopener" href="https://dash.cloudflare.com/">https://dash.cloudflare.com</a>）将域名的 SSL 设为「完全」。</p>
+<p>注意：使用「完全」方式请务必确定源站已开启 SSL！</p>
+<hr>
+<h2 id="速度"><a href="#速度" class="headerlink" title="速度"></a>速度</h2><pre><code class="hljs bash">PING cf.record.yfun.top (141.101.115.11): 56 data bytes
+64 bytes from 141.101.115.11: icmp_seq=0 ttl=52 time=17.007 ms
+64 bytes from 141.101.115.11: icmp_seq=1 ttl=52 time=16.363 ms
+64 bytes from 141.101.115.11: icmp_seq=2 ttl=52 time=21.385 ms
+64 bytes from 141.101.115.11: icmp_seq=3 ttl=52 time=19.305 ms
+64 bytes from 141.101.115.11: icmp_seq=4 ttl=52 time=16.341 ms
+64 bytes from 141.101.115.11: icmp_seq=5 ttl=52 time=23.181 ms
+64 bytes from 141.101.115.11: icmp_seq=6 ttl=52 time=18.888 ms
+64 bytes from 141.101.115.11: icmp_seq=7 ttl=52 time=18.087 ms
+64 bytes from 141.101.115.11: icmp_seq=8 ttl=52 time=16.153 ms
+64 bytes from 141.101.115.11: icmp_seq=9 ttl=52 time=19.363 ms
+
+--- cf.record.yfun.top ping statistics ---
+10 packets transmitted, 10 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 16.153/18.607/23.181/2.209 ms</code></pre>
+
+      </div>
+          
+            <br/>
+            <hr/>
+            <div id="p-meta-i">
+                
+                    <div class="post-meta mr-3">
+                      <i class="fa fa-folder meta-icon"></i>
+                      
+                        &nbsp;&nbsp;&nbsp;<a class="hover-with-bg" href="/categories/%E6%9E%81%E5%AE%A2/">极客</a>
+                      
+                    </div>
+                  
+                  
+                    <div class="post-meta">
+                      <i class="fa fa-tags meta-icon"></i>
+                      
+                        &nbsp;&nbsp;<a class="hover-with-bg" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+                      
+                        &nbsp;&nbsp;<a class="hover-with-bg" href="/tags/CDN/">CDN</a>
+                      
+                        &nbsp;&nbsp;<a class="hover-with-bg" href="/tags/CloudFlare/">CloudFlare</a>
+                      
+                    </div>
+                  
+            </div>
+          
+    </div>
+</div>
+
+    <!-- Comments -->
+    <div class="comments">
+        
+        
+    <script src="https://cdn.jsdelivr.net/npm/@waline/client@0.9.0/dist/Waline.min.js"></script>
+    <div id="miracle-comments">
+        <div id="waline"></div>
+    </div>
+    <script>
+        new Waline({
+            el: '#waline',
+            serverURL: 'https://blog-waline.vercel.app',
+            path: window.location.pathname,
+            placeholder: '来一起讨论吧~ \n请文明发言，谢谢。',
+            avatar: 'mp',
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: 'zh-CN',
+            highlight: true,
+            avatarForce: false,
+            requiredFields: ["nick","mail"]
+        });
+    </script>
+
+    </div>
+
+
+
+
+        </div>
+        </div>
+        <!-- 引入页脚文件 -->
+        <footer class="text-center">
+    
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme is <a href="https://github.com/hifun-team/hexo-theme-miracle" target="_blank">Miracle</a></p>
+</footer>
+<div class="p-btn">
+    
+        <a class="toc-btn" id="toc-btn"><i class="fas fa-indent"></i></a>
+    
+    <a href="#" class="click-btn"><i class="fas fa-chevron-up"></i></a>
+</div>
+
+<!-- SCRIPTS -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+
+
+
+<script>
+    var toggle = true;
+    //导航栏按钮
+    $('.btnImg').click(function() {
+        if (toggle) {
+            $('.btnImg').css("border", "1px solid #b0ccf3");
+            toggle = false
+        } else {
+            $('.btnImg').css("border", "1px solid transparent");
+            toggle = true;
+        }
+        $(".show").slideToggle(300);
+    })
+     
+    //窗口大小发生改变
+    $(window).resize(function() {
+        //获取窗口宽度
+        var windSize = $(window).width();
+     
+        if (windSize > 885) {
+            $(".show").slideDown(0);
+        } else {
+            $(".show").slideUp(0);
+        }
+    });
+    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
+</script>
+
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+    
+<script src="/js/search.js"></script>
+
+    <script>
+    (function () {
+        var path = "/search.xml";
+        var inputArea = $("#local-search-input");
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    })();
+    $("#search-btn").click(function(){
+        $("#modalSearch").removeClass("display-none");
+    });
+    $("#local-search-close").click(function(){
+        $("#modalSearch").addClass("display-none");
+    });
+</script>
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+    <link href="/css/themes/code.css" rel="stylesheet">  
+    <script src="/js/hljs.js"></script>  
+    <script >hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js"></script>
+    <script>
+        window.tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.post-toc',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '#post-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3, h4, h5, h6' || 'h1, h2, h3, h4, h5, h6',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+            linkClass: 'tocbot-link',
+            activeLinkClass: 'tocbot-active-link',
+            listClass: 'tocbot-list',
+            isCollapsedClass: 'tocbot-is-collapsed',
+            collapsibleClass: 'tocbot-is-collapsible',
+            collapseDepth: 0 || 0,
+            scrollSmooth    : true
+        });
+        $(".toc-btn").click(function(){
+            $(".post-toc").toggleClass("display-inline");
+        });
+    </script>
+
+
+
+
+
+    </body>
+
+</html>

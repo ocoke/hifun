@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- 引入页面头部文件 -->
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/1GsaSI.png">
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/1GsaSI.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>使用 Vercel 部署静态网站 - YFun&#39;s Blog</title>
+    
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+<link rel="stylesheet" href="/icon/css/all.min.css">
+
+    
+        <link rel="stylesheet" href="/css/themes/dark.css" media="(prefers-color-scheme: dark)">
+    
+    
+    <meta name="description" content="探寻一切有趣的事物！">
+    <meta name="author" content="YFun">
+    <meta name="keywords" content="">
+    <style>.hljs-comment,.hljs-quote{color:#969896;}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-deletion{color:#cc6666;}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-meta,.hljs-link{color:#de935f;}.hljs-attribute{color:#f0c674;}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#b5bd68;}.hljs-title,.hljs-section{color:#81a2be;}.hljs-keyword,.hljs-selector-tag{color:#b294bb;}.hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:0.5em;}.hljs-emphasis{font-style:italic;}.hljs-strong{font-weight:bold;}
+</style>
+
+
+    
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="YFun's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="YFun's Blog" type="application/rss+xml">
+</head>
+
+    <body>
+        <header>
+            <div class="c-nav">
+	<div class="container navFlex">
+		<div class="flexItem">
+      		<a href="/">
+        		<h1 class="logo">YFun&#39;s Blog</h1>
+      		</a>
+		</div>
+		
+		<div class="flexItem hiden logo">
+			<i class="fa fa-bars btnImg"></i>
+		</div>
+		<div class="flexItem show">
+			<ul>
+				
+          			<li><a href="/">首页</a></li>
+				
+          			<li><a href="/archives">归档</a></li>
+				
+          			<li><a href="/categories">分类</a></li>
+				
+          			<li><a href="/tags">标签</a></li>
+				
+          			<li><a href="/talk">说说</a></li>
+				
+          			<li><a href="/links">友链</a></li>
+				
+          			<li><a href="/about/">关于</a></li>
+				
+				
+				<li><a href="javascript:;" id="search-btn"><i class="fas fa-search meta-icon"></i></a></li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+
+            <div class="modal fade display-none" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" id="searchDocument">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="fas fa-times meta-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate" placeholder="关键词">
+        </div>
+        <div class="list-group-m">
+          <div class="list-group" id="local-search-result">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        </header>
+        <div id="page-main" class="main-content">
+        <div class="mg-top">
+            
+
+<div id="post-meta-m">
+    <div class="post-meta" id="post-meta">
+  <h3>使用 Vercel 部署静态网站</h3>
+    
+      <span class="post-meta-label">
+        <i class="fa fa-user meta-icon" aria-hidden="true"></i>
+        YFun
+      </span>
+    
+    
+      <span class="post-meta-label ml-10">
+        <i class="fa fa-calendar meta-icon" aria-hidden="true"></i>
+        <time datetime="2020-11-23 18:22" pubdate>
+          2020年11月23日
+        </time>
+      </span>
+    
+    
+      
+      <span class="post-meta ml-10">
+        <i class="fa fa-file-word meta-icon"></i>
+        共 325 字
+      </span>
+    
+    
+      
+      <span class="post-meta ml-10">
+        <i class="fa fa-clock meta-icon"></i>
+        
+        预计 
+        3
+         分钟
+      </span>
+    
+    
+  </div>
+  
+  
+</div>
+<div class="article-m">
+  <div class="post-toc"></div>
+    <div id="article">
+      <div id="post-content">
+        <h2 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h2><p>使用浏览器访问：<a target="_blank" rel="noopener" href="https://vercel.com/signup">https://vercel.com/signup</a></p>
+<p>点击「Cotinue with GitHub」并使用 GitHub 账号注册。</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/YzQIUy.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/YzQIUy.png"  alt="使用 GitHub 登录" >
+                    </a>
+                    </p>
+<details><summary>
+无法注册账号？
+</summary>
+Vercel 不支持 163/QQ 等国内邮箱的注册，请使用 <a href="https://outlook.live.com" target="_blank">Outlook 邮箱</a> 再次注册 GitHub 后使用新 GitHub 账号注册！
+</details>
+
+<hr>
+<h2 id="创建代码仓库"><a href="#创建代码仓库" class="headerlink" title="创建代码仓库"></a>创建代码仓库</h2><p>新建 GitHub 代码仓库，并在代码仓库中新建 <code>index.html</code> 文件，这将作为首页。</p>
+<p>在 <code>index.html</code> 文件中填写基本的代码内容，如：</p>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Test Page<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This page is for test.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+<hr>
+<h2 id="使用-Vercel-部署"><a href="#使用-Vercel-部署" class="headerlink" title="使用 Vercel 部署"></a>使用 Vercel 部署</h2><p>点击<a target="_blank" rel="noopener" href="https://vercel.com/dashboard">控制台</a>右上角的「Import Project」</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/ZprWh4.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/ZprWh4.png"  >
+                    </a>
+                    </p>
+<p>点击「Import Git Repository」下方的「Continue」</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/hgeaBV.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/hgeaBV.png"  >
+                    </a>
+                    </p>
+<p>输入 GitHub 仓库的地址并点击「Continue」</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/Uabikg.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/Uabikg.png"  >
+                    </a>
+                    </p>
+<p>经过基本配置后，项目就会自动部署。</p>
+<p>点击项目控制台的「View Domain」进入域名配置</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/lLYsWv.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/lLYsWv.png"  >
+                    </a>
+                    </p>
+<p>默认会提供 <code>*.vercel.app</code> 免费域名，也可以免费添加自己的域名。</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/ek0ZYY.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/ek0ZYY.png"  >
+                    </a>
+                    </p>
+<blockquote>
+<p>目前新项目已经更换为 <code>*.vercel.app</code> 域名，如仍需要 <code>*.now.sh</code> 域名，可以直接填写，实测可以使用。<br/><br>例如我需要使用 <code>test-page-123.now.sh</code> 域名，那么我只需要在自定义域名处填写并点击「Add」即可。</p>
+</blockquote>
+
+      </div>
+          
+            <br/>
+            <hr/>
+            <div id="p-meta-i">
+                
+                    <div class="post-meta mr-3">
+                      <i class="fa fa-folder meta-icon"></i>
+                      
+                        &nbsp;&nbsp;&nbsp;<a class="hover-with-bg" href="/categories/%E6%9E%81%E5%AE%A2/">极客</a>
+                      
+                    </div>
+                  
+                  
+                    <div class="post-meta">
+                      <i class="fa fa-tags meta-icon"></i>
+                      
+                        &nbsp;&nbsp;<a class="hover-with-bg" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+                      
+                    </div>
+                  
+            </div>
+          
+    </div>
+</div>
+
+    <!-- Comments -->
+    <div class="comments">
+        
+        
+    <script src="https://cdn.jsdelivr.net/npm/@waline/client@0.9.0/dist/Waline.min.js"></script>
+    <div id="miracle-comments">
+        <div id="waline"></div>
+    </div>
+    <script>
+        new Waline({
+            el: '#waline',
+            serverURL: 'https://blog-waline.vercel.app',
+            path: window.location.pathname,
+            placeholder: '来一起讨论吧~ \n请文明发言，谢谢。',
+            avatar: 'mp',
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: 'zh-CN',
+            highlight: true,
+            avatarForce: false,
+            requiredFields: ["nick","mail"]
+        });
+    </script>
+
+    </div>
+
+
+
+
+        </div>
+        </div>
+        <!-- 引入页脚文件 -->
+        <footer class="text-center">
+    
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme is <a href="https://github.com/hifun-team/hexo-theme-miracle" target="_blank">Miracle</a></p>
+</footer>
+<div class="p-btn">
+    
+        <a class="toc-btn" id="toc-btn"><i class="fas fa-indent"></i></a>
+    
+    <a href="#" class="click-btn"><i class="fas fa-chevron-up"></i></a>
+</div>
+
+<!-- SCRIPTS -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+
+
+
+<script>
+    var toggle = true;
+    //导航栏按钮
+    $('.btnImg').click(function() {
+        if (toggle) {
+            $('.btnImg').css("border", "1px solid #b0ccf3");
+            toggle = false
+        } else {
+            $('.btnImg').css("border", "1px solid transparent");
+            toggle = true;
+        }
+        $(".show").slideToggle(300);
+    })
+     
+    //窗口大小发生改变
+    $(window).resize(function() {
+        //获取窗口宽度
+        var windSize = $(window).width();
+     
+        if (windSize > 885) {
+            $(".show").slideDown(0);
+        } else {
+            $(".show").slideUp(0);
+        }
+    });
+    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
+</script>
+
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+    
+<script src="/js/search.js"></script>
+
+    <script>
+    (function () {
+        var path = "/search.xml";
+        var inputArea = $("#local-search-input");
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    })();
+    $("#search-btn").click(function(){
+        $("#modalSearch").removeClass("display-none");
+    });
+    $("#local-search-close").click(function(){
+        $("#modalSearch").addClass("display-none");
+    });
+</script>
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+    <link href="/css/themes/code.css" rel="stylesheet">  
+    <script src="/js/hljs.js"></script>  
+    <script >hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js"></script>
+    <script>
+        window.tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.post-toc',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '#post-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3, h4, h5, h6' || 'h1, h2, h3, h4, h5, h6',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+            linkClass: 'tocbot-link',
+            activeLinkClass: 'tocbot-active-link',
+            listClass: 'tocbot-list',
+            isCollapsedClass: 'tocbot-is-collapsed',
+            collapsibleClass: 'tocbot-is-collapsible',
+            collapseDepth: 0 || 0,
+            scrollSmooth    : true
+        });
+        $(".toc-btn").click(function(){
+            $(".post-toc").toggleClass("display-inline");
+        });
+    </script>
+
+
+
+
+
+    </body>
+
+</html>

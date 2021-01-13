@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- 引入页面头部文件 -->
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/1GsaSI.png">
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/1GsaSI.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>免费的图床 - YFun&#39;s Blog</title>
+    
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+<link rel="stylesheet" href="/icon/css/all.min.css">
+
+    
+        <link rel="stylesheet" href="/css/themes/dark.css" media="(prefers-color-scheme: dark)">
+    
+    
+    <meta name="description" content="探寻一切有趣的事物！">
+    <meta name="author" content="YFun">
+    <meta name="keywords" content="">
+    <style>.hljs-comment,.hljs-quote{color:#969896;}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-deletion{color:#cc6666;}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-meta,.hljs-link{color:#de935f;}.hljs-attribute{color:#f0c674;}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#b5bd68;}.hljs-title,.hljs-section{color:#81a2be;}.hljs-keyword,.hljs-selector-tag{color:#b294bb;}.hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:0.5em;}.hljs-emphasis{font-style:italic;}.hljs-strong{font-weight:bold;}
+</style>
+
+
+    
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="YFun's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="YFun's Blog" type="application/rss+xml">
+</head>
+
+    <body>
+        <header>
+            <div class="c-nav">
+	<div class="container navFlex">
+		<div class="flexItem">
+      		<a href="/">
+        		<h1 class="logo">YFun&#39;s Blog</h1>
+      		</a>
+		</div>
+		
+		<div class="flexItem hiden logo">
+			<i class="fa fa-bars btnImg"></i>
+		</div>
+		<div class="flexItem show">
+			<ul>
+				
+          			<li><a href="/">首页</a></li>
+				
+          			<li><a href="/archives">归档</a></li>
+				
+          			<li><a href="/categories">分类</a></li>
+				
+          			<li><a href="/tags">标签</a></li>
+				
+          			<li><a href="/talk">说说</a></li>
+				
+          			<li><a href="/links">友链</a></li>
+				
+          			<li><a href="/about/">关于</a></li>
+				
+				
+				<li><a href="javascript:;" id="search-btn"><i class="fas fa-search meta-icon"></i></a></li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+
+            <div class="modal fade display-none" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" id="searchDocument">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="fas fa-times meta-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate" placeholder="关键词">
+        </div>
+        <div class="list-group-m">
+          <div class="list-group" id="local-search-result">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        </header>
+        <div id="page-main" class="main-content">
+        <div class="mg-top">
+            
+
+<div id="post-meta-m">
+    <div class="post-meta" id="post-meta">
+  <h3>免费的图床</h3>
+    
+      <span class="post-meta-label">
+        <i class="fa fa-user meta-icon" aria-hidden="true"></i>
+        YFun
+      </span>
+    
+    
+      <span class="post-meta-label ml-10">
+        <i class="fa fa-calendar meta-icon" aria-hidden="true"></i>
+        <time datetime="2020-11-27 16:45" pubdate>
+          2020年11月27日
+        </time>
+      </span>
+    
+    
+      
+      <span class="post-meta ml-10">
+        <i class="fa fa-file-word meta-icon"></i>
+        共 1.4k 字
+      </span>
+    
+    
+      
+      <span class="post-meta ml-10">
+        <i class="fa fa-clock meta-icon"></i>
+        
+        预计 
+        13
+         分钟
+      </span>
+    
+    
+  </div>
+  
+  
+</div>
+<div class="article-m">
+  <div class="post-toc"></div>
+    <div id="article">
+      <div id="post-content">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文将介绍一些<strong>免费</strong>的图床，可以供博客/日常使用。</p>
+<p>每个图床都会给出测试链接供测试，无法访问或图片丢失则代表图床失效。</p>
+<h1 id="公共图床"><a href="#公共图床" class="headerlink" title="公共图床"></a>公共图床</h1><h2 id="SM-MS"><a href="#SM-MS" class="headerlink" title="SM.MS"></a>SM.MS</h2><p><a target="_blank" rel="noopener" href="https://sm.ms/">https://sm.ms</a></p>
+<p>曾经图床的域名有备案并使用国内 CDN，但后来因为滥用被吊销。</p>
+<p>现在使用的是 CloudFlare，国内访问<strong>效果不好</strong>甚至无法访问，不建议使用。</p>
+<p>测试图片：</p>
+<blockquote>
+<p>为避免影响访问速度，此处使用超链接，点击即可看到。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://i.loli.net/2020/11/27/qNudBVIcGHe14vm.jpg">SM.MS 测试图片</a></p>
+<hr>
+<h2 id="Imgur"><a href="#Imgur" class="headerlink" title="Imgur"></a>Imgur</h2><p><a target="_blank" rel="noopener" href="https://imgur.com/">https://imgur.com</a></p>
+<p>国外一家图片托管服务商，你可以选择注册或不注册，同样的，拖拽上传，永久保留，其SLA有着相当高的保证。</p>
+<p>然而很可惜的是，Imgur 并不能在国内正常访问。你也可以尝试使用 <a href="#%E4%BB%A3%E7%90%86">#代理</a> 解决</p>
+<p>测试图片：</p>
+<blockquote>
+<p>为避免影响访问速度，此处使用超链接，点击即可看到。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://i.imgur.com/NATHKc2.jpeg">Imgur 测试图片</a></p>
+<hr>
+<h2 id="去不图床"><a href="#去不图床" class="headerlink" title="去不图床"></a>去不图床</h2><p><a target="_blank" rel="noopener" href="https://7bu.top/">https://7bu.top/</a></p>
+<p>由<a target="_blank" rel="noopener" href="https://dusays.com/241/">杜老师</a>提供的个人公益图床，存储于阿里和腾讯的对象存储。</p>
+<p>官方保证 SLA&gt;=99% ，目前来看是一个不错的选择。</p>
+<p>当然，毕竟是个人维护的图床，能不能永久撑下去还是个问题。</p>
+<p>如果您需要搭配 PicGo/uPic，请参考以下的配置：</p>
+<pre><code class="hljs plain">接口地址：https:&#x2F;&#x2F;7bu.top&#x2F;api&#x2F;upload
+POST 参数：image
+回调 JSON：data.url</code></pre>
+
+<p>测试图片：</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://7.dusays.com/2020/11/27/6689e9310134b.jpg">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://7.dusays.com/2020/11/27/6689e9310134b.jpg"  alt="去不图床" >
+                    </a>
+                    </p>
+<blockquote>
+<p>去不图床所使用的 CDN 面向的是中国大陆，海外大概率解析到一些很辣鸡的节点。</p>
+</blockquote>
+<hr>
+<h2 id="路过图床"><a href="#路过图床" class="headerlink" title="路过图床"></a>路过图床</h2><p><a target="_blank" rel="noopener" href="https://imgchr.com/">https://imgchr.com</a></p>
+<p>支持永久存储图片，全球CDN加速。官方宣称『图床从2011年至今都稳定运行』。</p>
+<p>测试图片：</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://s3.ax1x.com/2020/11/27/DrM4XQ.jpg">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://s3.ax1x.com/2020/11/27/DrM4XQ.jpg"  alt="路过图床" >
+                    </a>
+                    </p>
+<hr>
+<h2 id="Postimage"><a href="#Postimage" class="headerlink" title="Postimage"></a>Postimage</h2><p><a target="_blank" rel="noopener" href="https://postimage.org/">https://postimage.org/</a></p>
+<p>Postimage 是一款来自国外的图床工具，支持按照一定大小缩放图片及设置图片自动删除。</p>
+<p>在上传完成后，Postimage 会为你生成多种链接格式以满足不同需求。</p>
+<p>Postimage 还会生成一个用于删除当前图片的链接，你只要访问那个链接即可将图片从服务器上删除。</p>
+<p>测试图片：</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://i.postimg.cc/CF6g03Jx/th.jpg?dl=1">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://i.postimg.cc/CF6g03Jx/th.jpg?dl=1"  alt="Postimage" >
+                    </a>
+                    </p>
+<hr>
+<h1 id="折腾"><a href="#折腾" class="headerlink" title="折腾"></a>折腾</h1><h2 id="GitHub-jsDelivr"><a href="#GitHub-jsDelivr" class="headerlink" title="GitHub + jsDelivr"></a>GitHub + jsDelivr</h2><p><strong>网上有许多的教程，此处不再演示。</strong></p>
+<p>jsDelivr 非常稳定，国外使用 CloudFlare，国内有网宿节点，速度非常之快。</p>
+<p>测试图片：</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/th.jpg">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/th.jpg"  alt="jsDelivr" >
+                    </a>
+                    </p>
+<hr>
+<h2 id="NPM-镜像"><a href="#NPM-镜像" class="headerlink" title="NPM + 镜像"></a>NPM + 镜像</h2><p>我们可以使用 NPM 作为图床的储存。</p>
+<p>再搭配上各种镜像调用，速度扛扛滴。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><blockquote>
+<p>您应该拥有基本的 <code>npm</code> 环境，如没有，请安装。<br/><br>安装教程可以参阅互联网，有很多可供参考。</p>
+</blockquote>
+<p>首先，新建一个文件夹存放文件。</p>
+<p>然后打开 <code>cmd</code> 或 终端，进入目录并输入以下命令 <strong>登录 NPM</strong>  ：</p>
+<pre><code class="hljs bash">npm login</code></pre>
+
+<blockquote>
+<p>如果没有账号的，请前往 <a target="_blank" rel="noopener" href="https://npmjs.com/">NPM</a> 注册账号</p>
+</blockquote>
+<p>紧接着输入以下命令：</p>
+<pre><code class="hljs bash">npm init <span class="hljs-comment"># 生成包文件</span>
+npm publish <span class="hljs-comment"># 发布包</span></code></pre>
+
+<p>请注意，如果你之前用过淘宝镜像，那么请先手动切回官方源：</p>
+<pre><code class="hljs bash">npm config <span class="hljs-built_in">set</span> registry https://registry.npmjs.org</code></pre>
+
+<p>每次更新完包内存放的图片后，你应该修改 <code>package.json</code> 文件内的版本号（向上增加），然后再次运行 <code>npm publish</code> 发布包。</p>
+<h3 id="推荐的镜像"><a href="#推荐的镜像" class="headerlink" title="推荐的镜像"></a>推荐的镜像</h3><pre><code class="hljs bash">https://cdn.jsdelivr.net/npm/  <span class="hljs-comment"># jsDelivr，网宿节点</span>
+https://unpkg.zhimg.com/ <span class="hljs-comment"># 知乎，阿里节点</span>
+https://code.bdstatic.com/npm/ <span class="hljs-comment"># 百度，网宿节点【拉取慢，不推荐】</span>
+https://shadow.elemecdn.com/npm/ <span class="hljs-comment"># 饿了么，网宿节点</span></code></pre>
+
+<pre><code class="hljs bash">[镜像链接]/[包名]@[版本]/[文件名]
+
+<span class="hljs-comment"># https://cdn.jsdelivr.net/npm/mdt-for-typecho@0.4.2/screenshot.png</span>
+<span class="hljs-comment"># https://unpkg.zhimg.com/mdt-for-typecho@0.4.2/screenshot.png</span>
+<span class="hljs-comment"># https://code.bdstatic.com/npm/mdt-for-typecho@0.4.2/screenshot.png</span>
+<span class="hljs-comment"># https://shadow.elemecdn.com/npm/mdt-for-typecho@0.4.2/screenshot.png</span></code></pre>
+
+<h3 id="测试图片"><a href="#测试图片" class="headerlink" title="测试图片"></a>测试图片</h3><blockquote>
+<p>图片太多，这里使用超链接，点击就可以看到。</p>
+</blockquote>
+<p>jsDelivr：<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/npm/mdt-for-typecho@0.4.2/screenshot.png">jsDelivr+NPM</a></p>
+<p>知乎：<a target="_blank" rel="noopener" href="https://unpkg.zhimg.com/mdt-for-typecho@0.4.2/screenshot.png">知乎+NPM</a></p>
+<p>百度：<a target="_blank" rel="noopener" href="https://code.bdstatic.com/npm/mdt-for-typecho@0.4.2/screenshot.png">百度+NPM</a></p>
+<p>饿了么：<a target="_blank" rel="noopener" href="https://shadow.elemecdn.com/npm/mdt-for-typecho@0.4.2/screenshot.png">饿了么+NPM</a></p>
+<hr>
+<h2 id="LeanCloud"><a href="#LeanCloud" class="headerlink" title="LeanCloud"></a>LeanCloud</h2><p><a target="_blank" rel="noopener" href="https://leancloud.cn/">https://leancloud.cn</a> / <a target="_blank" rel="noopener" href="https://leancloud.app/">https://leancloud.app</a><br>注册一个 LeanCloud 账号，此处不再赘述。</p>
+<p>创建一个 App，进入 <code>存储 -&gt; 文件</code>，点击「上传」并上传图片。</p>
+<p>上传成功后会在文件列表中显示，在列表中我们可以看到 URL 地址。</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/tlxdgw.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/tlxdgw.png"  alt="上传完成" >
+                    </a>
+                    </p>
+<p>测试链接：</p>
+<blockquote>
+<p>笔者使用国际版，为避免拖慢网站加载速度，使用超链接，点击即可看到。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://lc-gluttony.s3.amazonaws.com/lej8uP461WyF/ed16a23d417ffa0acf55.jpg/th.jpg">LeanCloud 测试链接 (国际版)</a></p>
+<hr>
+<h2 id="UniCloud"><a href="#UniCloud" class="headerlink" title="UniCloud"></a>UniCloud</h2><p><a target="_blank" rel="noopener" href="https://unicloud.dcloud.net.cn/">https://unicloud.dcloud.net.cn/</a></p>
+<p>注册一个 UniCloud 账号并登录，此处不再赘述。</p>
+<p>创建一个服务空间，选择『阿里云』并起个名字。（选择阿里云不收费）</p>
+<p>进入「云存储」，点击「上传文件」。</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/2PFj2g.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/2PFj2g.png"  alt="上传文件" >
+                    </a>
+                    </p>
+<p>点击右侧的「详情」即可查看图片地址，预览等信息。<br>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/iYKvJz.png">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/iYKvJz.png"  alt="进入详情" >
+                    </a>
+                    </p>
+<p>测试图片：</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-aliyun-qvxxidugllx169a140/51632140-309a-11eb-8a36-ebb87efcf8c0.jpg">
+                        <img   class="lazyload" src="/img/loading.svg" data-src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-aliyun-qvxxidugllx169a140/51632140-309a-11eb-8a36-ebb87efcf8c0.jpg"  alt="UniCloud" >
+                    </a>
+                    </h2><h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>Imgur 在国内已经无法访问了，但是，我们可以利用服务器代理啊！</p>
+<pre><code class="hljs bash">https://search.pstatic.net/common/?src= <span class="hljs-comment"># 国内网宿，只能加载特定图床图片如 Imgur [1]</span>
+https://imageproxy.pimg.tw/resize?url= <span class="hljs-comment"># Akamai 节点，无限制 [2]</span>
+https://images.weserv.nl/?url= <span class="hljs-comment"># CloudFlare 节点 [3]</span>
+https://pic1.xuehuaimg.com/proxy/ <span class="hljs-comment"># CloudFlare 节点 [4]</span></code></pre>
+
+<p>我们就以代理 Imgur 的图片为例，原链接：<a target="_blank" rel="noopener" href="https://i.imgur.com/NATHKc2.jpeg">https://i.imgur.com/NATHKc2.jpeg</a></p>
+<pre><code class="hljs bash">https://search.pstatic.net/common/?src=https://i.imgur.com/NATHKc2.jpeg
+https://imageproxy.pimg.tw/resize?url=https://i.imgur.com/NATHKc2.jpeg
+https://images.weserv.nl/?url=https://i.imgur.com/NATHKc2.jpeg
+https://pic1.xuehuaimg.com/proxy/https://i.imgur.com/NATHKc2.jpeg</code></pre>
+
+<p>测试图片：</p>
+<blockquote>
+<p>图片太多，这里使用超链接，点击就可以看到。</p>
+</blockquote>
+<blockquote>
+<p>此处的序号对应上方代理列表的序号</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://search.pstatic.net/common/?src=https://i.imgur.com/NATHKc2.jpeg">[1]</a></p>
+<p><a target="_blank" rel="noopener" href="https://imageproxy.pimg.tw/resize?url=https://i.imgur.com/NATHKc2.jpeg">[2]</a></p>
+<p><a target="_blank" rel="noopener" href="https://images.weserv.nl/?url=https://i.imgur.com/NATHKc2.jpeg">[3]</a></p>
+<p><a target="_blank" rel="noopener" href="https://pic1.xuehuaimg.com/proxy/https://i.imgur.com/NATHKc2.jpeg">[4]</a></p>
+
+      </div>
+          
+            <br/>
+            <hr/>
+            <div id="p-meta-i">
+                
+                    <div class="post-meta mr-3">
+                      <i class="fa fa-folder meta-icon"></i>
+                      
+                        &nbsp;&nbsp;&nbsp;<a class="hover-with-bg" href="/categories/%E6%9E%81%E5%AE%A2/">极客</a>
+                      
+                    </div>
+                  
+                  
+                    <div class="post-meta">
+                      <i class="fa fa-tags meta-icon"></i>
+                      
+                        &nbsp;&nbsp;<a class="hover-with-bg" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+                      
+                        &nbsp;&nbsp;<a class="hover-with-bg" href="/tags/%E5%9B%BE%E5%BA%8A/">图床</a>
+                      
+                    </div>
+                  
+            </div>
+          
+    </div>
+</div>
+
+    <!-- Comments -->
+    <div class="comments">
+        
+        
+    <script src="https://cdn.jsdelivr.net/npm/@waline/client@0.9.0/dist/Waline.min.js"></script>
+    <div id="miracle-comments">
+        <div id="waline"></div>
+    </div>
+    <script>
+        new Waline({
+            el: '#waline',
+            serverURL: 'https://blog-waline.vercel.app',
+            path: window.location.pathname,
+            placeholder: '来一起讨论吧~ \n请文明发言，谢谢。',
+            avatar: 'mp',
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: 'zh-CN',
+            highlight: true,
+            avatarForce: false,
+            requiredFields: ["nick","mail"]
+        });
+    </script>
+
+    </div>
+
+
+
+
+        </div>
+        </div>
+        <!-- 引入页脚文件 -->
+        <footer class="text-center">
+    
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme is <a href="https://github.com/hifun-team/hexo-theme-miracle" target="_blank">Miracle</a></p>
+</footer>
+<div class="p-btn">
+    
+        <a class="toc-btn" id="toc-btn"><i class="fas fa-indent"></i></a>
+    
+    <a href="#" class="click-btn"><i class="fas fa-chevron-up"></i></a>
+</div>
+
+<!-- SCRIPTS -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+
+
+
+<script>
+    var toggle = true;
+    //导航栏按钮
+    $('.btnImg').click(function() {
+        if (toggle) {
+            $('.btnImg').css("border", "1px solid #b0ccf3");
+            toggle = false
+        } else {
+            $('.btnImg').css("border", "1px solid transparent");
+            toggle = true;
+        }
+        $(".show").slideToggle(300);
+    })
+     
+    //窗口大小发生改变
+    $(window).resize(function() {
+        //获取窗口宽度
+        var windSize = $(window).width();
+     
+        if (windSize > 885) {
+            $(".show").slideDown(0);
+        } else {
+            $(".show").slideUp(0);
+        }
+    });
+    console.log('\n' + ' %c Powered by Hexo Theme Miracle ' + ' %c https://github.com/hifun-team/hexo-theme-miracle ' + '\n' + '\n', 'color: #fff; background: #4F9BFA; padding:5px 0;', 'background: #FFF; padding:5px 0;');
+</script>
+
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+    
+<script src="/js/search.js"></script>
+
+    <script>
+    (function () {
+        var path = "/search.xml";
+        var inputArea = $("#local-search-input");
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    })();
+    $("#search-btn").click(function(){
+        $("#modalSearch").removeClass("display-none");
+    });
+    $("#local-search-close").click(function(){
+        $("#modalSearch").addClass("display-none");
+    });
+</script>
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+    <link href="/css/themes/code.css" rel="stylesheet">  
+    <script src="/js/hljs.js"></script>  
+    <script >hljs.initHighlightingOnLoad();</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js"></script>
+    <script>
+        window.tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.post-toc',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '#post-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3, h4, h5, h6' || 'h1, h2, h3, h4, h5, h6',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+            linkClass: 'tocbot-link',
+            activeLinkClass: 'tocbot-active-link',
+            listClass: 'tocbot-list',
+            isCollapsedClass: 'tocbot-is-collapsed',
+            collapsibleClass: 'tocbot-is-collapsible',
+            collapseDepth: 0 || 0,
+            scrollSmooth    : true
+        });
+        $(".toc-btn").click(function(){
+            $(".post-toc").toggleClass("display-inline");
+        });
+    </script>
+
+
+
+
+
+    </body>
+
+</html>
