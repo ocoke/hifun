@@ -6,7 +6,7 @@
   <link href="https://www.yfun.top/atom.xml" rel="self"/>
   
   <link href="https://www.yfun.top/"/>
-  <updated>2021-01-13T10:29:36.000Z</updated>
+  <updated>2021-01-15T03:48:33.000Z</updated>
   <id>https://www.yfun.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>为你的网页图片加入懒加载</title>
+    <link href="https://www.yfun.top/posts/421506333.html"/>
+    <id>https://www.yfun.top/posts/421506333.html</id>
+    <published>2021-01-15T03:46:00.000Z</published>
+    <updated>2021-01-15T03:48:33.000Z</updated>
+    
+    
+    <summary type="html">懒加载在前端性能优化方面已经是一个的老生常谈的话题了，但或许还能优化优化。</summary>
+    
+    
+    
+    <category term="极客" scheme="https://www.yfun.top/categories/%E6%9E%81%E5%AE%A2/"/>
+    
+    
+    <category term="博客" scheme="https://www.yfun.top/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="Web" scheme="https://www.yfun.top/tags/Web/"/>
+    
+    <category term="JavaScript" scheme="https://www.yfun.top/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>博客更换新主题</title>
