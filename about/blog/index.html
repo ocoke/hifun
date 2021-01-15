@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="dark">
 <!-- 引入页面头部文件 -->
 
 
@@ -13,18 +13,24 @@
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     
     
-<link rel="stylesheet" href="/css/main.css">
-
-    
-<link rel="stylesheet" href="/icon/css/all.min.css">
-
-    
-        <link rel="stylesheet" href="/css/themes/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/icon/css/all.min.css">
     
     
     <meta name="description" content="探寻一切有趣的事物！">
     <meta name="author" content="YFun">
     <meta name="keywords" content="">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    
+    <script>
+        function setCookie(c,a){(t=new Date).setTime(t.getTime()+6048e5),document.cookie=c+"="+a+"; expires="+t.toGMTString()+"; path=/;"}function getCookie(a){for(var b,h=a+"=",d=document.cookie.split(";"),f=0;f<d.length;f++)if(b=d[f].trim(),0==b.indexOf(h))return b.substring(h.length,b.length);return!1}function light(){setCookie("DARK_STATUS","0"),$("#toggle-dark-icon").removeClass("fa-sun"),$("#toggle-dark-icon").addClass("fa-moon"),$("html").removeClass("dark")}function dark(){setCookie("DARK_STATUS","1"),$("#toggle-dark-icon").removeClass("fa-moon"),$("#toggle-dark-icon").addClass("fa-sun"),$("html").addClass("dark")}function setExpire(b){b?7>(e=new Date).getHours()?setCookie("DARK_EXPIRE",new Date(e.getFullYear(),e.getMonth(),e.getDate(),7).getTime()):setCookie("DARK_EXPIRE",new Date(e.getFullYear(),e.getMonth(),e.getDate()+1,7).getTime()):6<(e=new Date).getHours()&&20>e.getHours()?setCookie("DARK_EXPIRE",new Date(e.getFullYear(),e.getMonth(),e.getDate(),20).getTime()):setCookie("DARK_EXPIRE",(20<=e.getHours()?new Date(e.getFullYear(),e.getMonth(),e.getDate()+1,7):new Date(e.getFullYear(),e.getMonth(),e.getDate(),7)).getTime())}function toggleDark(){"1"==getCookie("DARK_STATUS")?(light(),setExpire(0)):(dark(),setExpire(1))}function darkInit(){(e=new Date).getTime()>getCookie("DARK_EXPIRE")?(setCookie("DARK_EXPIRE","0"),1==getCookie("AUTO_DARK")?6<(e=new Date).getHours()&&20>e.getHours()?(light(),setExpire(0)):(dark(),setExpire(1)):(light(),setExpire(0))):1==getCookie("DARK_STATUS")?dark():light()}window.matchMedia("(prefers-color-scheme: dark)").addListener(a=>{1==getCookie("AUTO_DARK")&&(a.matches?dark():light(),setCookie("DARK_EXPIRE","0"))}),$(function(){darkInit(),1==getCookie("AUTO_DARK")&&window.matchMedia("prefers-color-scheme: dark").matches&&(dark(),setCookie("DARK_EXPIRE","0"))});
+    </script>
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+    <link rel="stylesheet" href="/css/themes/dark.css">
+    
     <style>.hljs-comment,.hljs-quote{color:#969896;}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-deletion{color:#cc6666;}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-meta,.hljs-link{color:#de935f;}.hljs-attribute{color:#f0c674;}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#b5bd68;}.hljs-title,.hljs-section{color:#81a2be;}.hljs-keyword,.hljs-selector-tag{color:#b294bb;}.hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:0.5em;}.hljs-emphasis{font-style:italic;}.hljs-strong{font-weight:bold;}
 </style>
 
@@ -66,6 +72,9 @@
 				
 				
 				<li><a href="javascript:;" id="search-btn"><i class="fas fa-search meta-icon"></i></a></li>
+				
+				
+				<li><a href="javascript:;" onclick="toggleDark()"><i class="fas fa-sun meta-icon" id="toggle-dark-icon"></i></a></li>
 				
 			</ul>
 		</div>
@@ -127,7 +136,7 @@
         </div>
         <!-- 引入页脚文件 -->
         <footer class="text-center">
-     <!-- Google Adsense --> <script data-ad-client="ca-pub-5902069866611465" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+    
     
     
     <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme is <a href="https://github.com/hifun-team/hexo-theme-miracle" target="_blank">Miracle</a></p>
@@ -139,7 +148,7 @@
 
 <!-- SCRIPTS -->
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
 
 
 
@@ -194,14 +203,18 @@
 </script>
 
 
-    
-<script src="/js/lazyload.js"></script>
+    <script>
+        var content=$(".lazyload-img");var preload=0;$(document).ready(function(){function load(){var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;var winTop=window.innerHeight;for(var i=0;i<content.length;i++){if(content[i].offsetTop<=scrollTop+winTop+preload){if(!$(content[i]).attr("load")){var pageContentRaw=$(content[i]).attr("data-srcset");$(content[i]).attr('srcset',pageContentRaw);$(content[i]).attr("load",true)}}}}load();window.onscroll=function(){load()}});
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/js/hljs.js"></script>  
+    <script>hljs.initHighlightingOnLoad();</script>
 
 
 
-    <link href="/css/themes/code.css" rel="stylesheet">  
-    <script src="/js/hljs.js"></script>  
-    <script >hljs.initHighlightingOnLoad();</script>
+
+
 
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="dark">
 <!-- 引入页面头部文件 -->
 
 
@@ -13,18 +13,24 @@
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     
     
-<link rel="stylesheet" href="/css/main.css">
-
-    
-<link rel="stylesheet" href="/icon/css/all.min.css">
-
-    
-        <link rel="stylesheet" href="/css/themes/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/icon/css/all.min.css">
     
     
     <meta name="description" content="探寻一切有趣的事物！">
     <meta name="author" content="YFun">
     <meta name="keywords" content="">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    
+    <script>
+        function setCookie(c,a){(t=new Date).setTime(t.getTime()+6048e5),document.cookie=c+"="+a+"; expires="+t.toGMTString()+"; path=/;"}function getCookie(a){for(var b,h=a+"=",d=document.cookie.split(";"),f=0;f<d.length;f++)if(b=d[f].trim(),0==b.indexOf(h))return b.substring(h.length,b.length);return!1}function light(){setCookie("DARK_STATUS","0"),$("#toggle-dark-icon").removeClass("fa-sun"),$("#toggle-dark-icon").addClass("fa-moon"),$("html").removeClass("dark")}function dark(){setCookie("DARK_STATUS","1"),$("#toggle-dark-icon").removeClass("fa-moon"),$("#toggle-dark-icon").addClass("fa-sun"),$("html").addClass("dark")}function setExpire(b){b?7>(e=new Date).getHours()?setCookie("DARK_EXPIRE",new Date(e.getFullYear(),e.getMonth(),e.getDate(),7).getTime()):setCookie("DARK_EXPIRE",new Date(e.getFullYear(),e.getMonth(),e.getDate()+1,7).getTime()):6<(e=new Date).getHours()&&20>e.getHours()?setCookie("DARK_EXPIRE",new Date(e.getFullYear(),e.getMonth(),e.getDate(),20).getTime()):setCookie("DARK_EXPIRE",(20<=e.getHours()?new Date(e.getFullYear(),e.getMonth(),e.getDate()+1,7):new Date(e.getFullYear(),e.getMonth(),e.getDate(),7)).getTime())}function toggleDark(){"1"==getCookie("DARK_STATUS")?(light(),setExpire(0)):(dark(),setExpire(1))}function darkInit(){(e=new Date).getTime()>getCookie("DARK_EXPIRE")?(setCookie("DARK_EXPIRE","0"),1==getCookie("AUTO_DARK")?6<(e=new Date).getHours()&&20>e.getHours()?(light(),setExpire(0)):(dark(),setExpire(1)):(light(),setExpire(0))):1==getCookie("DARK_STATUS")?dark():light()}window.matchMedia("(prefers-color-scheme: dark)").addListener(a=>{1==getCookie("AUTO_DARK")&&(a.matches?dark():light(),setCookie("DARK_EXPIRE","0"))}),$(function(){darkInit(),1==getCookie("AUTO_DARK")&&window.matchMedia("prefers-color-scheme: dark").matches&&(dark(),setCookie("DARK_EXPIRE","0"))});
+    </script>
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+    <link rel="stylesheet" href="/css/themes/dark.css">
+    
     <style>.hljs-comment,.hljs-quote{color:#969896;}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-deletion{color:#cc6666;}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-meta,.hljs-link{color:#de935f;}.hljs-attribute{color:#f0c674;}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#b5bd68;}.hljs-title,.hljs-section{color:#81a2be;}.hljs-keyword,.hljs-selector-tag{color:#b294bb;}.hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:0.5em;}.hljs-emphasis{font-style:italic;}.hljs-strong{font-weight:bold;}
 </style>
 
@@ -66,6 +72,9 @@
 				
 				
 				<li><a href="javascript:;" id="search-btn"><i class="fas fa-search meta-icon"></i></a></li>
+				
+				
+				<li><a href="javascript:;" onclick="toggleDark()"><i class="fas fa-sun meta-icon" id="toggle-dark-icon"></i></a></li>
 				
 			</ul>
 		</div>
@@ -141,7 +150,13 @@
   
 </div>
 <div class="article-m">
-  <div class="post-toc"></div>
+  <div class="post-toc">
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AC%E5%85%B1%E5%9B%BE%E5%BA%8A"><span class="toc-number">2.</span> <span class="toc-text">公共图床</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SM-MS"><span class="toc-number">2.1.</span> <span class="toc-text">SM.MS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Imgur"><span class="toc-number">2.2.</span> <span class="toc-text">Imgur</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%BB%E4%B8%8D%E5%9B%BE%E5%BA%8A"><span class="toc-number">2.3.</span> <span class="toc-text">去不图床</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E8%BF%87%E5%9B%BE%E5%BA%8A"><span class="toc-number">2.4.</span> <span class="toc-text">路过图床</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Postimage"><span class="toc-number">2.5.</span> <span class="toc-text">Postimage</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%98%E8%85%BE"><span class="toc-number">3.</span> <span class="toc-text">折腾</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub-jsDelivr"><span class="toc-number">3.1.</span> <span class="toc-text">GitHub + jsDelivr</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NPM-%E9%95%9C%E5%83%8F"><span class="toc-number">3.2.</span> <span class="toc-text">NPM + 镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.1.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E7%9A%84%E9%95%9C%E5%83%8F"><span class="toc-number">3.2.2.</span> <span class="toc-text">推荐的镜像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87"><span class="toc-number">3.2.3.</span> <span class="toc-text">测试图片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LeanCloud"><span class="toc-number">3.3.</span> <span class="toc-text">LeanCloud</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UniCloud"><span class="toc-number">3.4.</span> <span class="toc-text">UniCloud</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.5.</span> <span class="toc-text">
+                    
+                    </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%90%86"><span class="toc-number">3.6.</span> <span class="toc-text">代理</span></a></li></ol></li></ol>
+    
+  </div>
     <div id="article">
       <div id="post-content">
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文将介绍一些<strong>免费</strong>的图床，可以供博客/日常使用。</p>
@@ -176,7 +191,7 @@ POST 参数：image
 <p>测试图片：</p>
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://7.dusays.com/2020/11/27/6689e9310134b.jpg">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://7.dusays.com/2020/11/27/6689e9310134b.jpg"  alt="去不图床" >
+                        <img   class="lazyload-img" src="https://7.dusays.com/2020/11/27/6689e9310134b.jpg" srcset="/img/loading.svg" data-srcset="https://7.dusays.com/2020/11/27/6689e9310134b.jpg"  alt="去不图床" >
                     </a>
                     </p>
 <blockquote>
@@ -188,7 +203,7 @@ POST 参数：image
 <p>测试图片：</p>
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://s3.ax1x.com/2020/11/27/DrM4XQ.jpg">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://s3.ax1x.com/2020/11/27/DrM4XQ.jpg"  alt="路过图床" >
+                        <img   class="lazyload-img" src="https://s3.ax1x.com/2020/11/27/DrM4XQ.jpg" srcset="/img/loading.svg" data-srcset="https://s3.ax1x.com/2020/11/27/DrM4XQ.jpg"  alt="路过图床" >
                     </a>
                     </p>
 <hr>
@@ -199,7 +214,7 @@ POST 参数：image
 <p>测试图片：</p>
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://i.postimg.cc/CF6g03Jx/th.jpg?dl=1">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://i.postimg.cc/CF6g03Jx/th.jpg?dl=1"  alt="Postimage" >
+                        <img   class="lazyload-img" src="https://i.postimg.cc/CF6g03Jx/th.jpg?dl=1" srcset="/img/loading.svg" data-srcset="https://i.postimg.cc/CF6g03Jx/th.jpg?dl=1"  alt="Postimage" >
                     </a>
                     </p>
 <hr>
@@ -208,7 +223,7 @@ POST 参数：image
 <p>测试图片：</p>
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/th.jpg">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/th.jpg"  alt="jsDelivr" >
+                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/th.jpg" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/th.jpg"  alt="jsDelivr" >
                     </a>
                     </p>
 <hr>
@@ -257,7 +272,7 @@ https://shadow.elemecdn.com/npm/ <span class="hljs-comment"># 饿了么，网宿
 <p>上传成功后会在文件列表中显示，在列表中我们可以看到 URL 地址。</p>
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/tlxdgw.png">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/tlxdgw.png"  alt="上传完成" >
+                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/tlxdgw.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/tlxdgw.png"  alt="上传完成" >
                     </a>
                     </p>
 <p>测试链接：</p>
@@ -272,18 +287,18 @@ https://shadow.elemecdn.com/npm/ <span class="hljs-comment"># 饿了么，网宿
 <p>进入「云存储」，点击「上传文件」。</p>
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/2PFj2g.png">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/2PFj2g.png"  alt="上传文件" >
+                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/2PFj2g.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/2PFj2g.png"  alt="上传文件" >
                     </a>
                     </p>
 <p>点击右侧的「详情」即可查看图片地址，预览等信息。<br>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/iYKvJz.png">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/iYKvJz.png"  alt="进入详情" >
+                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/iYKvJz.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/iYKvJz.png"  alt="进入详情" >
                     </a>
                     </p>
 <p>测试图片：</p>
 <h2 id=""><a href="#" class="headerlink" title=""></a>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-aliyun-qvxxidugllx169a140/51632140-309a-11eb-8a36-ebb87efcf8c0.jpg">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-aliyun-qvxxidugllx169a140/51632140-309a-11eb-8a36-ebb87efcf8c0.jpg"  alt="UniCloud" >
+                        <img   class="lazyload-img" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-aliyun-qvxxidugllx169a140/51632140-309a-11eb-8a36-ebb87efcf8c0.jpg" srcset="/img/loading.svg" data-srcset="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-aliyun-qvxxidugllx169a140/51632140-309a-11eb-8a36-ebb87efcf8c0.jpg"  alt="UniCloud" >
                     </a>
                     </h2><h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2><p>Imgur 在国内已经无法访问了，但是，我们可以利用服务器代理啊！</p>
 <pre><code class="hljs bash">https://search.pstatic.net/common/?src= <span class="hljs-comment"># 国内网宿，只能加载特定图床图片如 Imgur [1]</span>
@@ -370,7 +385,7 @@ https://pic1.xuehuaimg.com/proxy/https://i.imgur.com/NATHKc2.jpeg</code></pre>
         </div>
         <!-- 引入页脚文件 -->
         <footer class="text-center">
-     <!-- Google Adsense --> <script data-ad-client="ca-pub-5902069866611465" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+    
     
     
     <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme is <a href="https://github.com/hifun-team/hexo-theme-miracle" target="_blank">Miracle</a></p>
@@ -384,7 +399,7 @@ https://pic1.xuehuaimg.com/proxy/https://i.imgur.com/NATHKc2.jpeg</code></pre>
 
 <!-- SCRIPTS -->
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
 
 
 
@@ -439,39 +454,25 @@ https://pic1.xuehuaimg.com/proxy/https://i.imgur.com/NATHKc2.jpeg</code></pre>
 </script>
 
 
-    
-<script src="/js/lazyload.js"></script>
-
-
-
-    <link href="/css/themes/code.css" rel="stylesheet">  
-    <script src="/js/hljs.js"></script>  
-    <script >hljs.initHighlightingOnLoad();</script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js"></script>
     <script>
-        window.tocbot.init({
-            // Where to render the table of contents.
-            tocSelector: '.post-toc',
-            // Where to grab the headings to build the table of contents.
-            contentSelector: '#post-content',
-            // Which headings to grab inside of the contentSelector element.
-            headingSelector: 'h1, h2, h3, h4, h5, h6' || 'h1, h2, h3, h4, h5, h6',
-            // For headings inside relative or absolute positioned containers within content.
-            hasInnerContainers: true,
-            linkClass: 'tocbot-link',
-            activeLinkClass: 'tocbot-active-link',
-            listClass: 'tocbot-list',
-            isCollapsedClass: 'tocbot-is-collapsed',
-            collapsibleClass: 'tocbot-is-collapsible',
-            collapseDepth: 0 || 0,
-            scrollSmooth    : true
-        });
+        var content=$(".lazyload-img");var preload=0;$(document).ready(function(){function load(){var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;var winTop=window.innerHeight;for(var i=0;i<content.length;i++){if(content[i].offsetTop<=scrollTop+winTop+preload){if(!$(content[i]).attr("load")){var pageContentRaw=$(content[i]).attr("data-srcset");$(content[i]).attr('srcset',pageContentRaw);$(content[i]).attr("load",true)}}}}load();window.onscroll=function(){load()}});
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/js/hljs.js"></script>  
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script>
         $(".toc-btn").click(function(){
             $(".post-toc").toggleClass("display-inline");
         });
     </script>
+
+
+
+
+
 
 
 

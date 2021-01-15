@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="dark">
 <!-- 引入页面头部文件 -->
 
 
@@ -13,18 +13,24 @@
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     
     
-<link rel="stylesheet" href="/css/main.css">
-
-    
-<link rel="stylesheet" href="/icon/css/all.min.css">
-
-    
-        <link rel="stylesheet" href="/css/themes/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/icon/css/all.min.css">
     
     
     <meta name="description" content="探寻一切有趣的事物！">
     <meta name="author" content="YFun">
     <meta name="keywords" content="">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    
+    <script>
+        function setCookie(c,a){(t=new Date).setTime(t.getTime()+6048e5),document.cookie=c+"="+a+"; expires="+t.toGMTString()+"; path=/;"}function getCookie(a){for(var b,h=a+"=",d=document.cookie.split(";"),f=0;f<d.length;f++)if(b=d[f].trim(),0==b.indexOf(h))return b.substring(h.length,b.length);return!1}function light(){setCookie("DARK_STATUS","0"),$("#toggle-dark-icon").removeClass("fa-sun"),$("#toggle-dark-icon").addClass("fa-moon"),$("html").removeClass("dark")}function dark(){setCookie("DARK_STATUS","1"),$("#toggle-dark-icon").removeClass("fa-moon"),$("#toggle-dark-icon").addClass("fa-sun"),$("html").addClass("dark")}function setExpire(b){b?7>(e=new Date).getHours()?setCookie("DARK_EXPIRE",new Date(e.getFullYear(),e.getMonth(),e.getDate(),7).getTime()):setCookie("DARK_EXPIRE",new Date(e.getFullYear(),e.getMonth(),e.getDate()+1,7).getTime()):6<(e=new Date).getHours()&&20>e.getHours()?setCookie("DARK_EXPIRE",new Date(e.getFullYear(),e.getMonth(),e.getDate(),20).getTime()):setCookie("DARK_EXPIRE",(20<=e.getHours()?new Date(e.getFullYear(),e.getMonth(),e.getDate()+1,7):new Date(e.getFullYear(),e.getMonth(),e.getDate(),7)).getTime())}function toggleDark(){"1"==getCookie("DARK_STATUS")?(light(),setExpire(0)):(dark(),setExpire(1))}function darkInit(){(e=new Date).getTime()>getCookie("DARK_EXPIRE")?(setCookie("DARK_EXPIRE","0"),1==getCookie("AUTO_DARK")?6<(e=new Date).getHours()&&20>e.getHours()?(light(),setExpire(0)):(dark(),setExpire(1)):(light(),setExpire(0))):1==getCookie("DARK_STATUS")?dark():light()}window.matchMedia("(prefers-color-scheme: dark)").addListener(a=>{1==getCookie("AUTO_DARK")&&(a.matches?dark():light(),setCookie("DARK_EXPIRE","0"))}),$(function(){darkInit(),1==getCookie("AUTO_DARK")&&window.matchMedia("prefers-color-scheme: dark").matches&&(dark(),setCookie("DARK_EXPIRE","0"))});
+    </script>
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+    <link rel="stylesheet" href="/css/themes/dark.css">
+    
     <style>.hljs-comment,.hljs-quote{color:#969896;}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-deletion{color:#cc6666;}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-meta,.hljs-link{color:#de935f;}.hljs-attribute{color:#f0c674;}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#b5bd68;}.hljs-title,.hljs-section{color:#81a2be;}.hljs-keyword,.hljs-selector-tag{color:#b294bb;}.hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:0.5em;}.hljs-emphasis{font-style:italic;}.hljs-strong{font-weight:bold;}
 </style>
 
@@ -66,6 +72,9 @@
 				
 				
 				<li><a href="javascript:;" id="search-btn"><i class="fas fa-search meta-icon"></i></a></li>
+				
+				
+				<li><a href="javascript:;" onclick="toggleDark()"><i class="fas fa-sun meta-icon" id="toggle-dark-icon"></i></a></li>
 				
 			</ul>
 		</div>
@@ -141,7 +150,11 @@
   
 </div>
 <div class="article-m">
-  <div class="post-toc"></div>
+  <div class="post-toc">
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%8C%E5%8A%A8"><span class="toc-number">2.</span> <span class="toc-text">行动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96-GitHub-%E4%BB%A4%E7%89%8C"><span class="toc-number">2.1.</span> <span class="toc-text">获取 GitHub 令牌</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">2.2.</span> <span class="toc-text">新建仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-Github-Action"><span class="toc-number">2.3.</span> <span class="toc-text">配置 Github Action</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li></ol>
+    
+  </div>
     <div id="article">
       <div id="post-content">
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用 Hexo 写博客，每次写完都要生成静态文件，而且 Hexo 基于 <code>Node.JS</code>，不能再手机上更新。</p>
@@ -153,32 +166,32 @@
 <h1 id="行动"><a href="#行动" class="headerlink" title="行动"></a>行动</h1><h2 id="获取-GitHub-令牌"><a href="#获取-GitHub-令牌" class="headerlink" title="获取 GitHub 令牌"></a>获取 GitHub 令牌</h2><p>登录你的 GitHub 账号，点击右上角的头像，点击「Settings」进入设置。</p>
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/2rxI7G.png">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/2rxI7G.png"  alt="设置" >
+                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/2rxI7G.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/2rxI7G.png"  alt="设置" >
                     </a>
                     </p>
 <p>点击菜单栏中的「Developer settings」进入开发者设置。</p>
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/ak0J1J.png">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/ak0J1J.png"  alt="开发者设置" >
+                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/ak0J1J.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/ak0J1J.png"  alt="开发者设置" >
                     </a>
                     </p>
 <p>点击菜单栏中的「Personal access tokens」进入令牌设置。</p>
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/ZqiWw8.png">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/ZqiWw8.png"  alt="个人令牌" >
+                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/ZqiWw8.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/ZqiWw8.png"  alt="个人令牌" >
                     </a>
                     </p>
 <p>点击「Generate new token」新建一个令牌。</p>
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/JCHxQx.png">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/JCHxQx.png"  alt="新建令牌" >
+                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/JCHxQx.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/JCHxQx.png"  alt="新建令牌" >
                     </a>
                     </p>
 <p>勾选全部的权限，名称随意。</p>
 <p>并点击「Generate token」完成生成。</p>
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/6rzspL.png">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/6rzspL.png"  alt="生成令牌" >
+                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/6rzspL.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/6rzspL.png"  alt="生成令牌" >
                     </a>
                     </p>
 <p>记得保存好这个令牌，它不会再次出现。</p>
@@ -197,7 +210,7 @@ git push -u origin master <span class="hljs-comment"># 推送至远程仓库</sp
 <h2 id="配置-Github-Action"><a href="#配置-Github-Action" class="headerlink" title="配置 Github Action"></a>配置 Github Action</h2><p>进入仓库页面，点击「Action」，点击「 set up a workflow yourself 」。</p>
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/P5LacM.png">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/P5LacM.png"  alt="新建 WorkFlow" >
+                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/P5LacM.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/P5LacM.png"  alt="新建 WorkFlow" >
                     </a>
                     </p>
 <p>在左侧代码编辑器中将下方提供的代码粘贴进入代码框。</p>
@@ -267,7 +280,7 @@ git push -u origin master <span class="hljs-comment"># 推送至远程仓库</sp
 
 <p>
                     <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/n65GGW.png">
-                        <img   class="lazyload" src="/img/loading.svg" data-src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/n65GGW.png"  alt="配置 WorkFlow" >
+                        <img   class="lazyload-img" src="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/n65GGW.png" srcset="/img/loading.svg" data-srcset="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/n65GGW.png"  alt="配置 WorkFlow" >
                     </a>
                     </p>
 <hr>
@@ -341,7 +354,7 @@ git push origin master</code></pre>
         </div>
         <!-- 引入页脚文件 -->
         <footer class="text-center">
-     <!-- Google Adsense --> <script data-ad-client="ca-pub-5902069866611465" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+    
     
     
     <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme is <a href="https://github.com/hifun-team/hexo-theme-miracle" target="_blank">Miracle</a></p>
@@ -355,7 +368,7 @@ git push origin master</code></pre>
 
 <!-- SCRIPTS -->
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
 
 
 
@@ -410,39 +423,25 @@ git push origin master</code></pre>
 </script>
 
 
-    
-<script src="/js/lazyload.js"></script>
-
-
-
-    <link href="/css/themes/code.css" rel="stylesheet">  
-    <script src="/js/hljs.js"></script>  
-    <script >hljs.initHighlightingOnLoad();</script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js"></script>
     <script>
-        window.tocbot.init({
-            // Where to render the table of contents.
-            tocSelector: '.post-toc',
-            // Where to grab the headings to build the table of contents.
-            contentSelector: '#post-content',
-            // Which headings to grab inside of the contentSelector element.
-            headingSelector: 'h1, h2, h3, h4, h5, h6' || 'h1, h2, h3, h4, h5, h6',
-            // For headings inside relative or absolute positioned containers within content.
-            hasInnerContainers: true,
-            linkClass: 'tocbot-link',
-            activeLinkClass: 'tocbot-active-link',
-            listClass: 'tocbot-list',
-            isCollapsedClass: 'tocbot-is-collapsed',
-            collapsibleClass: 'tocbot-is-collapsible',
-            collapseDepth: 0 || 0,
-            scrollSmooth    : true
-        });
+        var content=$(".lazyload-img");var preload=0;$(document).ready(function(){function load(){var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;var winTop=window.innerHeight;for(var i=0;i<content.length;i++){if(content[i].offsetTop<=scrollTop+winTop+preload){if(!$(content[i]).attr("load")){var pageContentRaw=$(content[i]).attr("data-srcset");$(content[i]).attr('srcset',pageContentRaw);$(content[i]).attr("load",true)}}}}load();window.onscroll=function(){load()}});
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/js/hljs.js"></script>  
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+    <script>
         $(".toc-btn").click(function(){
             $(".post-toc").toggleClass("display-inline");
         });
     </script>
+
+
+
+
+
 
 
 
