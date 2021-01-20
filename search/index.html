@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/1GsaSI.png">
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/1GsaSI.png">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-    <title>分类 - YFun&#39;s Blog</title>
+    <title>YFun&#39;s Blog</title>
     
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/icon/css/all.min.css">
@@ -141,17 +141,34 @@
         </header>
         <div id="page-main" class="main-content">
         <div class="mg-top">
-            
-<div id="post-meta-m">
-    <div class="post-meta" id="post-meta">
-      <h3>分类</h3>
+            <div class="modal fade" id="modalSearch">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" id="searchDocument">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate" placeholder="关键词">
+        </div>
+        <div class="list-group-m">
+          <div class="list-group" id="local-search-result">
+          </div>
+        </div>
+        
+      </div>
     </div>
   </div>
-    <div class="tag-page-main">
-        <div class="category-list-content">
-            <ul class="all-category-list"><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a><span class="all-category-list-count">1</span></li><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/%E6%9E%81%E5%AE%A2/">极客</a><span class="all-category-list-count">5</span></li></ul>
-        </div>
-    </div>
+</div>
+<script src="/js/search.min.js"></script>
+<script>
+  (function () {
+      var path = "/search.xml";
+      var inputArea = $("#local-search-input");
+      searchFunc(path, 'local-search-input', 'local-search-result');
+  })();
+</script>
         </div>
         </div>
         <footer class="text-center">
