@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/twikoo@1.0.0/dist/twikoo.all.min.js"></script>
+    <style>
+        .br{
+            height: 300vh;
+            width: 100%;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h3>测试懒加载下的评论可否正常使用</h3>
+        <h3>鼠标滚动划过下方蓝色区域，注意控制台 Network 的变化</h3>
+        <div class="br"></div>
+        <br/>
+    </div>
+<div id="comment" raw='
+
+<div id="tcomment"></div>
+<script>
+    twikoo.init({
+        envId: "blog-5gsje14af285555e",
+        el: "#tcomment",
+        region: "ap-guangzhou",
+        path: "window.location.pathname"
+    });
+</script>
+'>
+</div>
+    <div class="content"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script>
+// 使用 jQuery 选择页面中的懒加载元素
+var content = $("#comment");
+
+    function load() {
+        // 获取页面高度等数据
+        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        var winTop = window.innerHeight;
+        // For 循环寻找出页面中所有的懒加载元素
+        for (var i = 0; i < content.length; i++) {
+            // 如果元素所在高度 小于等于 窗口高度+滚动高度 (可见高度)
+            if (content[i].offsetTop <= scrollTop + winTop) {
+                // 如果当前的内容没有被标记为已加载
+                if (!content.attr("load")) {
+                    // 从 RAW 属性中获取值
+                    var pageContentRaw = content.attr("raw");
+                    // 将其添加至 HTML 内容
+                    $(content[i]).html(pageContentRaw);
+                    content.attr("load",true);
+                }
+            }
+        }
+    }
+    // 页面加载时先执行一次
+    load();
+    // 当页面滚动的时候执行
+    window.onscroll = function () {
+        load();
+    }
+
+</script>
+</body>
+</html>
