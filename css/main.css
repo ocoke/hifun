@@ -292,183 +292,47 @@ a:hover {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.cloading {
-  height: 100%;
-  width: 100%;
-  z-index: 99999;
-  background-color: #424952;
+.c-loading {
+  z-index: 9999;
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 90px;
+  right: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.cloading .note {
-  margin: 10px;
+#miracle-comments {
+  text-align: left;
 }
-.loading .spinner {
-  animation: rotator 1.4s linear infinite;
+#miracle-comments p {
+  font-size: 1rem;
 }
-.loading .path {
-  stroke-dasharray: 187;
-  stroke-dashoffset: 0;
-  transform-origin: center;
-  animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+#article ul li {
+  font-size: 1.1rem;
 }
-@-moz-keyframes rotator {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(270deg);
-  }
+.collapse {
+  background-color: var(--page-bkg-color);
+  padding: 15px;
+  box-shadow: 2px 2px 6px var(--shadow-color);
 }
-@-webkit-keyframes rotator {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(270deg);
-  }
+.collapse .content {
+  display: none;
+  margin-top: 20px;
 }
-@-o-keyframes rotator {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(270deg);
-  }
+.collapse .header {
+  cursor: pointer;
 }
-@keyframes rotator {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(270deg);
-  }
+.collapse .header .icon {
+  font-size: 0.9rem;
+  float: right;
+  margin-top: 3px;
 }
-@-moz-keyframes colors {
-  0% {
-    stroke: #4285f4;
-  }
-  25% {
-    stroke: #de3e35;
-  }
-  50% {
-    stroke: #f7c223;
-  }
-  75% {
-    stroke: #1b9a59;
-  }
-  100% {
-    stroke: #4285f4;
-  }
-}
-@-webkit-keyframes colors {
-  0% {
-    stroke: #4285f4;
-  }
-  25% {
-    stroke: #de3e35;
-  }
-  50% {
-    stroke: #f7c223;
-  }
-  75% {
-    stroke: #1b9a59;
-  }
-  100% {
-    stroke: #4285f4;
-  }
-}
-@-o-keyframes colors {
-  0% {
-    stroke: #4285f4;
-  }
-  25% {
-    stroke: #de3e35;
-  }
-  50% {
-    stroke: #f7c223;
-  }
-  75% {
-    stroke: #1b9a59;
-  }
-  100% {
-    stroke: #4285f4;
-  }
-}
-@keyframes colors {
-  0% {
-    stroke: #4285f4;
-  }
-  25% {
-    stroke: #de3e35;
-  }
-  50% {
-    stroke: #f7c223;
-  }
-  75% {
-    stroke: #1b9a59;
-  }
-  100% {
-    stroke: #4285f4;
-  }
-}
-@-moz-keyframes dash {
-  0% {
-    stroke-dashoffset: 187;
-  }
-  50% {
-    stroke-dashoffset: 46.75;
-    transform: rotate(135deg);
-  }
-  100% {
-    stroke-dashoffset: 187;
-    transform: rotate(450deg);
-  }
-}
-@-webkit-keyframes dash {
-  0% {
-    stroke-dashoffset: 187;
-  }
-  50% {
-    stroke-dashoffset: 46.75;
-    transform: rotate(135deg);
-  }
-  100% {
-    stroke-dashoffset: 187;
-    transform: rotate(450deg);
-  }
-}
-@-o-keyframes dash {
-  0% {
-    stroke-dashoffset: 187;
-  }
-  50% {
-    stroke-dashoffset: 46.75;
-    transform: rotate(135deg);
-  }
-  100% {
-    stroke-dashoffset: 187;
-    transform: rotate(450deg);
-  }
-}
-@keyframes dash {
-  0% {
-    stroke-dashoffset: 187;
-  }
-  50% {
-    stroke-dashoffset: 46.75;
-    transform: rotate(135deg);
-  }
-  100% {
-    stroke-dashoffset: 187;
-    transform: rotate(450deg);
-  }
+.collapse .header .up {
+  transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+/* Firefox */
+  -webkit-transform: rotate(180deg);
+/* Safari 和 Chrome */
 }
 /* Home */
 #index-banner .typed-cursor {
@@ -482,6 +346,8 @@ a:hover {
   color: var(--first-text-color);
 }
 .index-card {
+  margin: auto;
+  max-width: 700px;
   box-shadow: 2px 2px 6px var(--shadow-color);
   padding: 28px;
   margin-bottom: 38px;
@@ -537,9 +403,9 @@ a:hover {
   content: "";
   position: absolute;
   height: 12px;
-  bottom: 2px;
-  left: -2px;
-  width: 100%;
+  bottom: 5px;
+  width: 105%;
+  left: -2.5%;
   z-index: -1;
   background-color: #4169e1;
   opacity: 0.3;
@@ -642,7 +508,7 @@ p {
   .list-group,
   .category-list-content,
   .links-page {
-    max-width: 960px;
+    max-width: 920px;
   }
 }
 #article {
@@ -739,7 +605,6 @@ p {
   font-size: 0.9rem !important;
 }
 #miracle-comments {
-  text-align: center;
   position: relative;
   box-sizing: border-box;
   width: 80%;
@@ -1033,6 +898,7 @@ code {
     display: block;
   }
   .c-nav .hiden {
+    cursor: pointer;
     display: block;
   }
   .c-nav .show {
@@ -1187,6 +1053,6 @@ footer p {
 .display-none {
   display: none !important;
 }
-.dark * {
+[data-user-color-scheme='dark'] * {
   transition: none !important;
 }
