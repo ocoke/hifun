@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yfun.top/posts/175456095.html</loc>
+    
+    <lastmod>2021-01-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yfun.top/posts/270988717.html</loc>
+    
+    <lastmod>2021-01-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yfun.top/test/lazyload-the-comment.html/index.html</loc>
     
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yfun.top/about/index.html</loc>
+    
+    <lastmod>2021-01-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yfun.top/about/blog/index.html</loc>
+    
+    <lastmod>2021-01-22</lastmod>
     
   </url>
   
@@ -12,13 +40,6 @@
     <loc>https://www.yfun.top/posts/421506333.html</loc>
     
     <lastmod>2021-01-15</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yfun.top/about/index.html</loc>
-    
-    <lastmod>2021-01-13</lastmod>
     
   </url>
   
@@ -71,17 +92,10 @@
     
   </url>
   
-  <url>
-    <loc>https://www.yfun.top/about/blog/index.html</loc>
-    
-    <lastmod>2020-12-06</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>https://www.yfun.top/</loc>
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -89,56 +103,63 @@
   
   <url>
     <loc>https://www.yfun.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfun.top/tags/%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfun.top/tags/CDN/</loc>
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfun.top/tags/CloudFlare/</loc>
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfun.top/tags/Hexo/</loc>
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfun.top/tags/GitHub/</loc>
-    <lastmod>2021-01-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yfun.top/tags/Web/</loc>
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfun.top/tags/JavaScript/</loc>
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yfun.top/tags/Web/</loc>
+    <lastmod>2021-01-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yfun.top/tags/CSS/</loc>
+    <lastmod>2021-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -147,14 +168,14 @@
   
   <url>
     <loc>https://www.yfun.top/categories/%E6%9E%81%E5%AE%A2/</loc>
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.yfun.top/categories/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2021-01-21</lastmod>
+    <lastmod>2021-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

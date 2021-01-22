@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/1GsaSI.png">
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/1GsaSI.png">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-    <title>JavaScript 为你的网页图片加入懒加载 - YFun&#39;s Blog</title>
+    <title>懒加载你的评论插件 - YFun&#39;s Blog</title>
     
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hifun-team/hexo-theme-miracle@latest/source/icon/css/all.min.css">
@@ -158,7 +158,7 @@
 
 <div id="post-meta-m">
     <div class="post-meta" id="post-meta">
-  <h3>JavaScript 为你的网页图片加入懒加载</h3>
+  <h3>懒加载你的评论插件</h3>
     
       <span class="post-meta-label">
         <i class="fa fa-user meta-icon" aria-hidden="true"></i>
@@ -168,8 +168,8 @@
     
       <span class="post-meta-label ml-10">
         <i class="fa fa-calendar meta-icon" aria-hidden="true"></i>
-        <time datetime="2021-01-15 11:46" pubdate>
-          2021年1月15日
+        <time datetime="2021-01-22 11:35" pubdate>
+          2021年1月22日
         </time>
       </span>
     
@@ -177,7 +177,7 @@
       
       <span class="post-meta ml-10">
         <i class="fa fa-file-word meta-icon"></i>
-        共 1.4k 字
+        共 709 字
       </span>
     
     
@@ -186,7 +186,7 @@
         <i class="fa fa-clock meta-icon"></i>
         
         预计 
-        13
+        7
          分钟
       </span>
     
@@ -196,72 +196,87 @@
   
 </div>
 <div class="article-m">
-  <div class="post-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.</span> <span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML"><span class="toc-number">2.1.</span> <span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS"><span class="toc-number">2.2.</span> <span class="toc-text">JS</span></a></li></ol></li></ol></div>
+  <div class="post-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.</span> <span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%AF%84%E8%AE%BA%E5%8C%BA%E4%BB%A3%E7%A0%81"><span class="toc-number">2.1.</span> <span class="toc-text">修改评论区代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS-%E5%AE%9E%E7%8E%B0%E6%87%92%E5%8A%A0%E8%BD%BD"><span class="toc-number">2.2.</span> <span class="toc-text">JS 实现懒加载</span></a></li></ol></li></ol></div>
     <div id="article">
       <div id="post-content">
-        <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>我们设置 <code>srcset</code> 为加载的动画，<code>src</code> 与 <code>data-srcset</code> 为真实的图片。</p>
-<p>当图片在页面的可见范围内的时候，则将 <code>data-srcset</code> 的值更新到 <code>srcset</code> 中，否则不更新。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>我们新建一个 HTML 页面，随意输入一些文字用于占位，再在这些文字中加入些图片。</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    登上微博热搜的必应推送壁纸是什么意思？多国专家懵了必应推送壁纸是怎么一回事？必应推送壁纸是什么梗？必应推送壁纸最近为什么这么火呢？说到必应推送壁纸大家肯定都不陌生，但是你知道必应推送壁纸到底是什么吗？相信大家对必应推送壁纸都很熟悉，必应推送壁纸就是我们每天都会经常遇到的，但是必应推送壁纸是怎么回事呢？必应推送壁纸最近能火，其实就是必应推送壁纸受到了大家的关注。大家可能会感到很惊讶，必应推送壁纸为什么是这样的？必应推送壁纸究竟为什么火起来了呢？但事实就是这样，小编也感到非常惊讶。以上就是小编为大家带来的的关于必应推送壁纸是什么意思，必应推送壁纸是什么梗的内容。欢迎大家在评论区和小编一起讨论，畅所欲言。
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">img</span> </span>
-<span class="hljs-tag">    <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;src/img/1.jpg&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;src/img/loading.svg&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">data-srcset</span>=<span class="hljs-string">&quot;src/img/1.jpg&quot;</span></span>
-<span class="hljs-tag">&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    什么是必应每日推送精美壁纸？只有1%的人答得上来！你知道必应每日推送精美壁纸吗？必应每日推送精美壁纸最近为什么这么火？大家都知道，现代社会中随着人们生活水平的提高，必应每日推送精美壁纸如今也成为了人们茶余饭后的谈资。相信大家对必应每日推送精美壁纸都很熟悉，必应每日推送精美壁纸就是我们每天都会经常遇到的，但是必应每日推送精美壁纸是怎么回事呢？今天小编就带大家来看看究竟是怎么一回事。必应每日推送精美壁纸最近能火，其实就是必应每日推送精美壁纸受到了大家的关注。大家可能会感到很惊讶，必应每日推送精美壁纸为什么是这样的？必应每日推送精美壁纸究竟为什么火起来了呢？但事实就是这样，小编也感到非常惊讶。那么以上就是今天小编为大家整理的关于必应每日推送精美壁纸是什么梗，必应每日推送精美壁纸为什么火的原因。如果大家喜欢，可以点赞表示对小编的支持。欢迎在下方评论和小编一起讨论喔
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">img</span> </span>
-<span class="hljs-tag">    <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;src/img/2.jpg&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;src/img/loading.svg&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">data-srcset</span>=<span class="hljs-string">&quot;src/img/2.jpg&quot;</span></span>
-<span class="hljs-tag">&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-    登上微博热搜的必应推送壁纸是什么意思？多国专家懵了必应推送壁纸是怎么一回事？必应推送壁纸是什么梗？必应推送壁纸最近为什么这么火呢？说到必应推送壁纸大家肯定都不陌生，但是你知道必应推送壁纸到底是什么吗？相信大家对必应推送壁纸都很熟悉，必应推送壁纸就是我们每天都会经常遇到的，但是必应推送壁纸是怎么回事呢？必应推送壁纸最近能火，其实就是必应推送壁纸受到了大家的关注。大家可能会感到很惊讶，必应推送壁纸为什么是这样的？必应推送壁纸究竟为什么火起来了呢？但事实就是这样，小编也感到非常惊讶。以上就是小编为大家带来的的关于必应推送壁纸是什么意思，必应推送壁纸是什么梗的内容。欢迎大家在评论区和小编一起讨论，畅所欲言。
-<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">img</span> </span>
-<span class="hljs-tag">    <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;src/img/3.jpg&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;src/img/loading.svg&quot;</span></span>
-<span class="hljs-tag">    <span class="hljs-attr">data-srcset</span>=<span class="hljs-string">&quot;src/img/3.jpg&quot;</span></span>
-<span class="hljs-tag">&gt;</span></code></pre>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>打开博客的文章页面，加载完毕就花费了一秒多的时长，打开控制台一看：</p>
+<p>
+                    <a data-fancybox="gallery" target="_blank" rel="noopener" href="https://7.dusays.com/2021/01/22/4478a892ab136.png">
+                        <img   class="lazyload-img" src="https://7.dusays.com/2021/01/22/4478a892ab136.png" srcset="/img/loading.svg" data-srcset="https://7.dusays.com/2021/01/22/4478a892ab136.png"  alt="全是表情包" >
+                    </a>
+                    </p>
+<blockquote>
+<p>全是评论的表情包</p>
+</blockquote>
+<p>再加上之前使用的是 Valine + LeanCloud 国际版，更是拖慢速度。</p>
+<p>我就决定懒加载评论插件，在评论区进入（或即将进入）可视范围时再加载。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><div class="note note-info">
+            <div class="title">提示</div>目前仅测试了 Twikoo 评论系统，其它评论系统理论上应该同样适用。
+          </div>
 
-<h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><p>我这里给出的代码依赖 <code>jQuery</code>，因为我使用了它的选择器，一定程度上会方便很多。</p>
-<p>一些代码的细节全在注释里了。</p>
-<pre><code class="hljs js"><span class="hljs-comment">// 使用 jQuery 选择页面中的懒加载元素</span>
-<span class="hljs-keyword">var</span> content = $(<span class="hljs-string">&quot;img&quot;</span>);
-<span class="hljs-comment">// 预先加载，0 为不预先加载，数字越大将会越提前加载。</span>
-<span class="hljs-keyword">var</span> preload = <span class="hljs-number">0</span>
-$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">load</span>(<span class="hljs-params"></span>) </span>&#123;
-        <span class="hljs-comment">// 获取页面高度等数据</span>
-        <span class="hljs-keyword">var</span> scrollTop = <span class="hljs-built_in">document</span>.body.scrollTop || <span class="hljs-built_in">document</span>.documentElement.scrollTop;
-        <span class="hljs-keyword">var</span> winTop = <span class="hljs-built_in">window</span>.innerHeight;
-        <span class="hljs-comment">// For 循环寻找出页面中所有的懒加载元素</span>
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; content.length; i++) &#123;
-            <span class="hljs-comment">// 如果元素所在高度 小于等于 窗口高度+滚动高度 (可见高度)</span>
-            <span class="hljs-keyword">if</span> (content[i].offsetTop &lt;= scrollTop + winTop + preload) &#123;
-                <span class="hljs-comment">// 如果当前的内容没有被标记为已加载</span>
-                <span class="hljs-keyword">if</span> (!$(content[i]).attr(<span class="hljs-string">&quot;load&quot;</span>)) &#123;
-                    <span class="hljs-comment">// 从 data-srcset 属性中获取值</span>
-                    <span class="hljs-keyword">var</span> pageContentRaw = $(content[i]).attr(<span class="hljs-string">&quot;data-srcset&quot;</span>);
-                    <span class="hljs-comment">// 将其更新至 srcset 属性中</span>
-                    $(content[i]).attr(<span class="hljs-string">&#x27;srcset&#x27;</span>,pageContentRaw);
-                    $(content[i]).attr(<span class="hljs-string">&quot;load&quot;</span>,<span class="hljs-literal">true</span>);
-                &#125;
+<h3 id="修改评论区代码"><a href="#修改评论区代码" class="headerlink" title="修改评论区代码"></a>修改评论区代码</h3><p>找到并修改你的评论区代码，将原先的评论区代码放入 <code>raw</code> 属性值中，此处仅提供示例参考：</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/twikoo@1.0.0/dist/twikoo.all.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;lazyload-comment&quot;</span> <span class="hljs-attr">raw</span>=<span class="hljs-string">&#x27;</span></span>
+<span class="hljs-tag"><span class="hljs-string">&lt;!-- 将原先的评论区代码放入 `raw` 属性值中 --&gt;</span></span>
+<span class="hljs-tag"><span class="hljs-string">&lt;!-- 注意：引入的评论插件代码文件不要懒加载，避免报错 --&gt;</span></span>
+<span class="hljs-tag"><span class="hljs-string">&lt;div id=&quot;tcomment&quot;&gt;&lt;/div&gt;</span></span>
+<span class="hljs-tag"><span class="hljs-string">&lt;script&gt;</span></span>
+<span class="hljs-tag"><span class="hljs-string">    twikoo.init(&#123;</span></span>
+<span class="hljs-tag"><span class="hljs-string">        envId: &quot;your-env-id&quot;,</span></span>
+<span class="hljs-tag"><span class="hljs-string">        el: &quot;#tcomment&quot;,</span></span>
+<span class="hljs-tag"><span class="hljs-string">        region: &quot;ap-guangzhou&quot;,</span></span>
+<span class="hljs-tag"><span class="hljs-string">        path: &quot;window.location.pathname&quot;</span></span>
+<span class="hljs-tag"><span class="hljs-string">    &#125;);</span></span>
+<span class="hljs-tag"><span class="hljs-string">&lt;/script&gt;</span></span>
+<span class="hljs-tag"><span class="hljs-string">&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+
+<div class="note note-warning">
+            <div class="title">注意</div>引入的代码文件不要懒加载，避免报错。
+          </div>
+
+<h3 id="JS-实现懒加载"><a href="#JS-实现懒加载" class="headerlink" title="JS 实现懒加载"></a>JS 实现懒加载</h3><div class="note note-info">
+            <div class="title">提示</div>我这里给出的代码依赖 jQuery，因为我使用了它的选择器和一些 API，一定程度上会方便很多。<br/>实际上原生 JS 也是可以达到同样的效果。
+          </div>
+
+<p>使用 jQuery 选择页面中的懒加载元素：</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> content = $(<span class="hljs-string">&quot;#lazyload-comment&quot;</span>);</code></pre>
+
+<p>再获取页面高度等数据，循环寻找出页面中所有的懒加载元素。</p>
+<p>如果元素所在高度 小于等于 可见高度，就代表元素是可见的。</p>
+<p>如果元素可见，就检查当前的内容是否被标记为已加载，避免重复的加载耗费资源。</p>
+<p>如果未加载，就从 <code>raw</code> 属性中获取值，将其添加至 HTML 内容。</p>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">load</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-comment">// 获取页面高度等数据</span>
+    <span class="hljs-keyword">var</span> scrollTop = <span class="hljs-built_in">document</span>.body.scrollTop || <span class="hljs-built_in">document</span>.documentElement.scrollTop;
+    <span class="hljs-keyword">var</span> winTop = <span class="hljs-built_in">window</span>.innerHeight;
+    <span class="hljs-comment">// For 循环寻找出页面中所有的懒加载元素</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; content.length; i++) &#123;
+        <span class="hljs-comment">// 如果元素所在高度 小于等于 窗口高度+滚动高度 (可见高度)</span>
+        <span class="hljs-keyword">if</span> (content[i].offsetTop &lt;= scrollTop + winTop) &#123;
+            <span class="hljs-comment">// 如果当前的内容没有被标记为已加载</span>
+            <span class="hljs-keyword">if</span> (!content.attr(<span class="hljs-string">&quot;load&quot;</span>)) &#123;
+                <span class="hljs-comment">// 从 RAW 属性中获取值</span>
+                <span class="hljs-keyword">var</span> pageContentRaw = content.attr(<span class="hljs-string">&quot;raw&quot;</span>);
+                <span class="hljs-comment">// 将其添加至 HTML 内容</span>
+                $(content[i]).html(pageContentRaw);
+                content.attr(<span class="hljs-string">&quot;load&quot;</span>,<span class="hljs-literal">true</span>);
             &#125;
         &#125;
     &#125;
-    <span class="hljs-comment">// 页面加载时先执行一次</span>
+&#125;</code></pre>
+
+<p>在页面刚加载完毕的时候先执行一次。再当页面滚动的时候重复执行。</p>
+<pre><code class="hljs js"><span class="hljs-comment">// 页面加载时先执行一次</span>
+load();
+<span class="hljs-comment">// 当页面滚动的时候执行</span>
+<span class="hljs-built_in">window</span>.onscroll = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
     load();
-    <span class="hljs-comment">// 当页面滚动的时候执行</span>
-    <span class="hljs-built_in">window</span>.onscroll = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
-        load();
-    &#125;
-&#125;);</code></pre>
+&#125;</code></pre>
 
-
+<blockquote>
+<p>别忘了在页面中引入这个 JS！</p>
+</blockquote>
+<p>可以看看：<a href="/test/lazyload-the-comment.html/">演示页面</a></p>
 
       </div>
           

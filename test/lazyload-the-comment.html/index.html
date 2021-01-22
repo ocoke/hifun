@@ -34,13 +34,11 @@
 '>
 </div>
     <div class="content"></div>
-
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 <script>
 // 使用 jQuery 选择页面中的懒加载元素
 var content = $("#comment");
-
-    function load() {
+function load() {
         // 获取页面高度等数据
         var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
         var winTop = window.innerHeight;
@@ -59,13 +57,12 @@ var content = $("#comment");
             }
         }
     }
-    // 页面加载时先执行一次
+// 页面加载时先执行一次
+load();
+// 当页面滚动的时候执行
+window.onscroll = function () {
     load();
-    // 当页面滚动的时候执行
-    window.onscroll = function () {
-        load();
-    }
-
+}
 </script>
 </body>
 </html>
