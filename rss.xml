@@ -15,7 +15,7 @@
     <atom:link href="https://www.yfun.top/rss.xml" rel="self" type="application/rss+xml"/>
     
     <description>探寻一切有趣的事物！</description>
-    <pubDate>Fri, 22 Jan 2021 04:50:19 GMT</pubDate>
+    <pubDate>Fri, 22 Jan 2021 04:58:45 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -24,14 +24,7 @@
       <guid>https://www.yfun.top/posts/175456095.html</guid>
       <pubDate>Fri, 22 Jan 2021 04:29:38 GMT</pubDate>
       
-        
-        
-          
-          
-      <description>&lt;div class=&quot;note note-info&quot;&gt;
-            &lt;div class=&quot;title&quot;&gt;转载文章&lt;/div&gt;原文标题：你好黑暗，我的老朋友 —— 为网站添加用户友好的深色模式支持&lt;p&gt;原文链接：&lt;a</description>
-          
-        
+      <description>无意间看到 Sukka 大佬的文章：「你好黑暗，我的老朋友 —— 为网站添加用户友好的深色模式支持」，跟着文章重构了主题深色模式的代码，就转载过来方便学习。</description>
       
       
       
